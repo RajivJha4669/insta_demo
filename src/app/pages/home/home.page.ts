@@ -56,4 +56,14 @@ export class HomePage implements OnInit {
     }
     this.getAllFeeds(event);
   }
+
+  public doRefresh(event) {
+    this.feedParams = {
+      page: 1,
+      results: 5,
+      seed: "feed"
+    }
+    this.listUsersFeed = [];
+    this.getAllFeeds(event);
+  }
 }

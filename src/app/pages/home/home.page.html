@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header lines="none">
   <ion-toolbar color="light">
     <ion-label slot="start">Instagram</ion-label>
     <ion-buttons slot="end">
@@ -15,6 +15,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="false">
+  <!-- Refresh Feeds -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <!-- Users stories list -->
   <div class="story-list">
     <div class="scroll-horizontal">

@@ -19,12 +19,7 @@ export class HttpService {
     if (!error) {
       return throwError('Something went wrong');
     }
-    let status = res.status
     let message = error.message;
-    if (status === 500) {
-      message.includes('Cannot delete or update a parent row')
-      return throwError({ messages: message, error })
-    }
     return throwError({ messages: message, error })
   }
 
